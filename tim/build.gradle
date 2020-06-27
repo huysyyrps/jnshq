@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion cfgs.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+        versionCode cfgs.versionCode
+        versionName cfgs.versionName
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.core:core:1.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
+
+    // MEIZU push sdk
+    implementation 'com.meizu.flyme.internet:push-internal:3.6.+@aar'
+
+    // bugly sdk
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.59'
+
+//implementation 'com.tencent.imsdk:tuikit:4.7.10'
+    implementation project(':tuikit')
+    implementation project(path: ':architecture')
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">济南城市圈</string>
+    <string name="welcome_back">欢迎回来</string>
+    <string name="pwd_hint">密码长度8-20位</string>
+    <string name="mobile_code">验证码</string>
+    <string name="moblie_hint">请输入手机号</string>
+    <string name="circle_tip">尊敬的用户，您发布的内容须遵守相关法律法规和社区规则，并经过审核才能生效。请严格遵守相关规定，以免违规。</string>
+    <string name="edit_info_tip">尊敬的用户，您每月最多可修改10次头像或昵称，个人资料 内容须遵守相关法律法规和社区规则，并经过审核爱能生 效，审核结果将会通过济南生活圈官网号通知。请严格遵守 相关规定，以免违规。</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/font_normal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:background="@color/white"
+        app:centerText=""
+        app:centerType="textView"
+        app:leftType="customView"
+        app:leftCustomView="@layout/lay_title_left_back"
+        app:showBottomLine="false"
+        app:titleBarColor="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+</FrameLayout>

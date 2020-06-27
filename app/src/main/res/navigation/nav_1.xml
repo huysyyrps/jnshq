@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_1"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.sdjnshq.circle.ui.page.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_userInfoEditFragment2"
+            app:destination="@id/userInfoEditFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoEditFragment2"
+        android:name="com.sdjnshq.circle.ui.page.user.UserInfoEditFragment"
+        android:label="UserInfoEditFragment" />
+</navigation>

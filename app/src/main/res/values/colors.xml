@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5064EB</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="gray">#666</color>
+    <color name="light_gray">#999</color>
+    <color name="transparent">#00000000</color>
+    <color name="font_normal">#333</color>
+    <color name="font_gray">#999</color>
+    <color name="font_hint">#999</color>
+    <color name="color_666">#666</color>
+    <color name="color_66666666">#66666666</color>
+    <color name="login_bt">#FF5064EB</color>
+    <color name="login_bt_gray">#999</color>
+    <color name="FF7C8CFE">#FF7C8CFE</color>
+    <color name="login_tab_select">#FF7C8CFE</color>
+    <color name= "login_send">#FF7383EF</color>
+    <color name="line_gray">#ededed</color>
+    <color name="ccc">#ccc</color>
+    <color name="f2">#f2f2f2</color>
+    <color name="f9">#F9F9F9</color>
+    <color name="f7">#f7f7f7</color>
+    <color name="ff999999">#999999</color>
+    <color name="home_bar_bg">#ff206ae5</color>
+    <color name="tab_unselect">#999999</color>
+    <color name="D9C494">#FFD9C494</color>
+    <color name="FF514A3F">#FF514A3F</color>
+    <color name="FF07C060">#FF07C060</color>
+    <color name="c_464646">#FF464646</color>
+    <color name="c_666666">#FF666666</color>
+    <color name="FFFF4731">#FFFF4731</color>
+    <color name="f5">#fff5f5f5</color>
+    <color name="FFFF0079">#FFFF0079</color>
+    <color name="FF3566FB">#FF3566FB</color>
+    <color name="ff7e7e7e">#ff7e7e7e</color>
+    <color name="ffededed">#ffededed</color>
+    <color name="fa">#fafafa</color>
+
+
+</resources>

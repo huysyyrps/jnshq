@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_money_frag"
+    android:orientation="vertical">
+
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:centerText="邀请有奖"
+        app:centerTextColor="@color/white"
+        app:centerType="textView"
+        app:layout_collapseMode="pin"
+        app:leftType="textView"
+        app:showBottomLine="false"
+        app:statusBarColor="@color/transparent"
+        app:titleBarColor="@color/transparent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_money_head"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_price_bg"
+                    android:layout_width="364dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="276dp"
+                    android:src="@mipmap/ic_money_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="我的邀请奖励"
+                    android:textColor="@color/c_464646"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_price_bg" />
+
+                <TextView
+                    android:id="@+id/tv_my_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/FFFF4731"
+                    android:textSize="19sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_my_price_tag"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_my_price_tag"
+                    app:layout_constraintRight_toRightOf="@id/tv_my_price_tag"
+                    tools:text="99" />
+
+                <TextView
+                    android:id="@+id/tv_my_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/FFFF4731"
+                    android:textSize="19sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_my_person_tag"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_my_person_tag"
+                    app:layout_constraintRight_toRightOf="@id/tv_my_person_tag"
+                    tools:text="99" />
+
+                <TextView
+                    android:id="@+id/tv_my_person2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/FFFF4731"
+                    android:textSize="19sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_my_person2_tag"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_my_person2_tag"
+                    app:layout_constraintRight_toRightOf="@id/tv_my_person2_tag"
+                    tools:text="99" />
+
+                <TextView
+                    android:id="@+id/tv_my_price_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="64dp"
+                    android:text="我的分成(元)"
+                    android:textColor="@color/c_464646"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_price_bg"
+                    app:layout_constraintTop_toTopOf="@id/iv_price_bg" />
+
+                <TextView
+                    android:id="@+id/tv_my_person_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:text="我的邀请(人)"
+                    android:textColor="@color/c_464646"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv_my_price_tag"
+                    app:layout_constraintRight_toLeftOf="@id/tv_my_person2_tag"
+                    app:layout_constraintTop_toTopOf="@id/iv_price_bg" />
+
+                <TextView
+                    android:id="@+id/tv_my_person2_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginRight="54dp"
+                    android:text="二度人脉(人)"
+                    android:textColor="@color/c_464646"
+                    android:textSize="13sp"
+                    app:layout_constraintRight_toRightOf="@id/iv_price_bg"
+                    app:layout_constraintTop_toTopOf="@id/iv_price_bg" />
+
+                <Button
+                    android:id="@+id/bt_my_invite"
+                    android:layout_width="185dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/bg_money_see_detail"
+                    android:text="查看我的邀请详情"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_price_bg"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_price_bg"
+                    app:layout_constraintRight_toRightOf="@id/iv_price_bg" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp">
+
+                <View
+                    android:id="@+id/v_bg"
+                    android:layout_width="330dp"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_white_radius10"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="187dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_invite_head"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_rewrod1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="@id/v_bg"
+                    app:layout_constraintRight_toRightOf="@id/v_bg"
+                    app:layout_constraintTop_toTopOf="@id/v_bg">
+
+                    <View
+                        android:id="@+id/v_bg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="78dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/f5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_invite1"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_marginLeft="14dp"
+                        android:src="@mipmap/ic_money_invite1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_invite1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="10dp"
+                        android:text="邀请好友成功注册"
+                        android:textColor="@color/font_normal"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_invite1"
+                        app:layout_constraintTop_toTopOf="@id/v_bg1" />
+
+                    <TextView
+                        android:id="@+id/tv_friend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="4dp"
+                        android:text="好友奖励："
+                        android:textColor="@color/color_666"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_invite1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_invite1" />
+
+                    <TextView
+                        android:id="@+id/tv_friend2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="4dp"
+                        android:text="二度人脉奖励："
+                        android:textColor="@color/color_666"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_invite1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_friend" />
+
+                    <TextView
+                        android:id="@+id/tv_friend_reward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/FFFF0079"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_friend"
+                        app:layout_constraintLeft_toRightOf="@id/tv_friend"
+                        app:layout_constraintTop_toTopOf="@id/tv_friend"
+                        tools:text="11" />
+
+                    <TextView
+                        android:id="@+id/tv_friend2_reward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/FFFF0079"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_friend2"
+                        app:layout_constraintLeft_toRightOf="@id/tv_friend2"
+                        app:layout_constraintTop_toTopOf="@id/tv_friend2"
+                        tools:text="11" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_rewrod2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="@id/v_bg"
+                    app:layout_constraintRight_toRightOf="@id/v_bg"
+                    app:layout_constraintTop_toBottomOf="@id/cl_rewrod1">
+
+                    <View
+                        android:id="@+id/v_bg2"
+                        android:layout_width="match_parent"
+                        android:layout_height="78dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/f5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_invite2"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_marginLeft="14dp"
+                        android:src="@mipmap/ic_money_invite2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_invite2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="10dp"
+                        android:text="邀请好友成为代言人"
+                        android:textColor="@color/font_normal"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_invite2"
+                        app:layout_constraintTop_toTopOf="@id/v_bg2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(奖金上不封顶)"
+                        android:textColor="@color/FF3566FB"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_invite2"
+                        app:layout_constraintLeft_toRightOf="@id/tv_invite2"
+                        app:layout_constraintTop_toTopOf="@id/tv_invite2" />
+
+                    <TextView
+                        android:id="@+id/tv_self"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="4dp"
+                        android:text="个人奖励："
+                        android:textColor="@color/color_666"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_invite2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_invite2" />
+
+                    <TextView
+                        android:id="@+id/tv_self_reward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/FFFF0079"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_self"
+                        app:layout_constraintLeft_toRightOf="@id/tv_self"
+                        app:layout_constraintTop_toTopOf="@id/tv_self"
+                        tools:text="20%" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/iv_rule"
+                    android:layout_width="23dp"
+                    android:layout_height="82dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/ic_invite_role"
+                    app:layout_constraintRight_toRightOf="@id/v_bg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_become_vip"
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:src="@mipmap/ic_become_vip"
+                    app:layout_constraintLeft_toLeftOf="@id/v_bg"
+                    app:layout_constraintRight_toLeftOf="@id/iv_share"
+                    app:layout_constraintTop_toBottomOf="@id/cl_rewrod2" />
+
+                <TextView
+                    android:id="@+id/tv_become_vip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:text="点击成为代言人"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_become_vip"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_become_vip"
+                    app:layout_constraintRight_toRightOf="@id/iv_become_vip"
+                    app:layout_constraintTop_toTopOf="@id/iv_become_vip" />
+
+                <ImageView
+                    android:id="@+id/iv_invite"
+                    android:layout_width="150dp"
+                    android:layout_height="54dp"
+                    android:visibility="gone"
+                    android:src="@mipmap/ic_money_invite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/v_bg"
+                    app:layout_constraintRight_toLeftOf="@id/iv_share"
+                    app:layout_constraintTop_toBottomOf="@id/iv_become_vip" />
+
+                <ImageView
+                    android:id="@+id/iv_share"
+                    android:layout_width="150dp"
+                    android:layout_height="54dp"
+                    android:visibility="gone"
+                    android:src="@mipmap/ic_money_share"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/iv_invite"
+                    app:layout_constraintRight_toRightOf="@id/v_bg"
+                    app:layout_constraintTop_toBottomOf="@id/iv_become_vip" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_white_radius10">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:text="奖励排行榜"
+                    android:textColor="@color/font_normal"
+                    android:textSize="16sp"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@color/white"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="暂无信息"
+                            android:textColor="@color/gray"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

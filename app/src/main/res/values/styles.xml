@@ -1,0 +1,82 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="App.Theme.Dialog.Alert" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/font_normal</item>
+    </style>
+    <style name="line_l14">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/f7</item>
+    </style>
+    <declare-styleable name="CommonTitleBar">
+    </declare-styleable>
+
+    <!--编辑信息 标题-->
+    <style name="info_tilte">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:background">@color/f7</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--编辑信息 item-->
+    <style name="info_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">63dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="info_item_name">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/font_normal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="info_item_value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/ff999999</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="info_item_arrow">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:src">@mipmap/ic_right_arrow</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="style_setting_item">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="style_setting_title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/font_normal</item>
+    </style>
+    <style name="Translucent_NoTitle" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item> <!-- 设置自定义布局的背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>  <!-- 设置window背景透明，也就是去边框 -->
+    </style>
+    <style name="my_title_bar">
+        <item name="titleBarHeight">@dimen/titleBarHeight</item>
+    </style>
+</resources>
+
+

@@ -1,0 +1,159 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.sdjnshq.circle"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"      // "x86"  显示指定支持的ABIs
+        }
+        multiDexEnabled true
+    }
+
+//    buildTypes {
+//        release {
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    signingConfigs {
+        release {
+            keyAlias 'jinancity'
+            keyPassword 'jinancity666'
+            storeFile file('../key/appkey.keystore')
+            storePassword 'jinancity666'
+        }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation project(':architecture')
+    implementation 'com.kunminx.player:player:1.1.6'
+
+    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+    compileOnly 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
+    compileOnly 'androidx.recyclerview:recyclerview:1.1.0'
+
+    compileOnly 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+
+    compileOnly 'androidx.navigation:navigation-runtime:2.2.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    // 权限
+    implementation 'com.yanzhenjie.permission:x:2.0.1'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'net.steamcrafted:materialiconlib:1.1.5'
+    // 定位
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:search:latest.integration'
+    // 圆角
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    /// tab
+    implementation 'com.lzp:FlycoTabLayoutZ:latest.integration'
+    implementation 'me.jessyan:autosize:1.2.1'
+    // 网络请求
+    implementation "io.reactivex.rxjava2:rxjava:2.1.0"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    // 下拉刷新
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation 'com.wuhenzhizao:titlebar:1.2.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+//    implementation project(path: ':picture_library')
+    // eventbus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation project(path: ':fragmentation')
+    implementation project(path: ':eventbus_activity_scope')
+    implementation project(path: ':fragmentation_swipeback')
+    implementation project(path: ':tim')
+    implementation project(path: ':picture_library')
+
+
+    implementation project(path: ':pickerview')
+    // 视频
+    implementation 'cn.jzvd:jiaozivideoplayer:7.2.4'
+    implementation 'com.blankj:utilcodex:1.28.3'
+    implementation project(':tuikit')
+    // 异常收集
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+//    implementation 'io.github.mayubao:pay_library:1.0.1'
+    implementation 'com.wang.avi:library:2.1.3'
+
+//    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation files('libs/MiPush_SDK_Client_3_6_12.jar')
+
+    // HUAWEI push sdk
+    implementation 'com.huawei.android.hms:push:2.6.3.301'
+    implementation 'com.huawei.android.hms:base:2.6.3.301'
+    implementation files('libs/mcssdk-2.0.2.jar')
+    implementation files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
+    implementation files('libs/alipaySdk-15.7.6-20200521195109.aar')
+}

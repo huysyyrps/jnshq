@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_mine_bg"
+                app:layout_scrollFlags="enterAlways">
+
+                <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+                    android:id="@+id/titleBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:titleBarHeight="@dimen/titleBarHeight"
+                    android:elevation="0dp"
+                    app:centerType="textView"
+                    app:centerText="个人中心"
+                    app:centerTextColor="@color/white"
+                    app:layout_collapseMode="pin"
+                    app:statusBarColor="@color/transparent"
+                    app:leftCustomView="@layout/lay_scan"
+                    app:leftType="customView"
+                    app:rightCustomView="@layout/lay_setting"
+                    app:rightType="customView"
+                    app:showBottomLine="false"
+                    app:fillStatusBar="true"
+                    app:titleBarColor="@color/transparent" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_mine_bg"
+                android:orientation="vertical">
+                <include layout="@layout/fragment_mine_head" />
+            </LinearLayout>
+            <FrameLayout
+                android:id="@+id/ll_vip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_mine_vip"/>
+                <TextView
+                    android:id="@+id/tv_vip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="60dp"
+                    android:text="开通会员，升级为代言人仅需98元"
+                    android:textSize="12sp"
+                    android:textColor="@color/D9C494"
+                    />
+            </FrameLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_friend"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_mine_friend"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/iv_circle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_firend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="我的好友"
+                        android:textColor="@color/font_hint"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="@id/iv_friend"
+                        app:layout_constraintRight_toRightOf="@id/iv_friend"
+                        app:layout_constraintTop_toBottomOf="@id/iv_friend" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_circle"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_mine_circle"
+                        app:layout_constraintLeft_toRightOf="@id/iv_friend"
+                        app:layout_constraintRight_toLeftOf="@id/iv_comment"
+                        app:layout_constraintTop_toTopOf="@id/iv_friend" />
+
+                    <TextView
+                        android:id="@+id/tv_circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="我的动态"
+                        android:textColor="@color/font_hint"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="@id/iv_circle"
+                        app:layout_constraintRight_toRightOf="@id/iv_circle"
+                        app:layout_constraintTop_toBottomOf="@id/iv_circle" />
+
+                    <ImageView
+                        android:id="@+id/iv_comment"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_message_who"
+                        app:layout_constraintLeft_toRightOf="@id/iv_circle"
+                        app:layout_constraintRight_toLeftOf="@id/iv_group"
+                        app:layout_constraintTop_toTopOf="@id/iv_friend" />
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="我的访客"
+                        android:textColor="@color/font_hint"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="@id/iv_comment"
+                        app:layout_constraintRight_toRightOf="@id/iv_comment"
+                        app:layout_constraintTop_toBottomOf="@id/iv_comment" />
+
+                    <ImageView
+                        android:id="@+id/iv_group"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@mipmap/ic_mine_group"
+                        app:layout_constraintLeft_toRightOf="@id/iv_comment"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_friend" />
+
+                    <TextView
+                        android:id="@+id/tv_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="我的群组"
+                        android:textColor="@color/font_hint"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="@id/iv_group"
+                        app:layout_constraintRight_toRightOf="@id/iv_group"
+                        app:layout_constraintTop_toBottomOf="@id/iv_group" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:text="商家发布管理"
+                android:textColor="@color/FF514A3F"
+                android:textSize="15sp"
+                android:background="@drawable/bg_mine_business_bg"/>
+
+            <com.flyco.tablayout.SlidingScaleTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                app:tl_indicator_color="@color/colorAccent"
+                app:tl_indicator_corner_radius="3dp"
+                app:tl_indicator_gravity="BOTTOM"
+                app:tl_indicator_height="2dp"
+                app:tl_indicator_width="7dp"
+                app:tl_openTextDmg="true"
+                app:tl_tab_gravity="Bottom"
+                app:tl_tab_marginBottom="8dp"
+                app:tl_tab_padding="15dp"
+                app:tl_textBold="SELECT"
+                app:tl_textSelectColor="@color/font_normal"
+                app:tl_textSelectSize="14sp"
+                app:tl_textUnSelectColor="@color/font_normal"
+                app:tl_textUnSelectSize="13sp" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,2 @@
+include ':app', ':architecture', ':ucrop', ':fragmentation_swipeback', ':fragmentation', ':fragmentation_core', ':eventbus_activity_scope', ':wheelview', ':pickerview', ':tim', ':tuikit', ':picture_library'
+rootProject.name = 'JNCircle'

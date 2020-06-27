@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:titlebar="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="71dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:orientation="vertical">
+
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+                </LinearLayout>
+
+                <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+                    android:id="@+id/titleBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="0dp"
+                    app:centerSearchBg="@drawable/bg_whiter_999"
+                    app:centerSearchEditable="false"
+                    app:centerSearchRightType="delete"
+                    app:centerType="searchView"
+                    app:layout_collapseMode="pin"
+                    app:leftText="haha ▼"
+                    app:leftTextColor="@color/font_normal"
+                    app:leftTextSize="12sp"
+                    app:leftType="textView"
+                    app:showBottomLine="false"
+                    app:titleBarColor="@color/transparent" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.flyco.tablayout.SlidingScaleTabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:tl_indicator_color="@color/colorAccent"
+                    app:tl_indicator_corner_radius="3dp"
+                    app:tl_indicator_gravity="BOTTOM"
+                    app:tl_indicator_height="2dp"
+                    app:tl_indicator_width="7dp"
+                    app:tl_openTextDmg="true"
+                    app:tl_tab_gravity="Bottom"
+                    app:tl_tab_marginBottom="8dp"
+                    app:tl_tab_padding="15dp"
+                    app:tl_textBold="SELECT"
+                    app:tl_textSelectColor="@color/font_normal"
+                    app:tl_textSelectSize="20sp"
+                    app:tl_textUnSelectColor="@color/font_normal"
+                    app:tl_textUnSelectSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_circle_create"
+                    android:layout_width="50dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/send_circle"
+                    android:gravity="center"
+                    android:text="发动态"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_marginRight="6dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

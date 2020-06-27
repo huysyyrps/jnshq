@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:centerType="textView"
+        app:centerText="设置"
+        app:leftCustomView="@layout/lay_title_left_back"
+        app:leftType="customView"
+        app:statusBarColor="@color/transparent"
+        app:showBottomLine="false"
+        app:titleBarColor="@color/transparent" />
+    <LinearLayout
+        android:id="@+id/rl_clean_cache"
+        style="@style/style_setting_item"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_setting_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="清理缓存"/>
+
+        <TextView
+            android:id="@+id/tv_cache_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            tools:text="13M" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_about"
+        style="@style/style_setting_item"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_setting_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="关于"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_login_out"
+        style="@style/style_setting_item"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_setting_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="退出登录"/>
+    </LinearLayout>
+</LinearLayout>

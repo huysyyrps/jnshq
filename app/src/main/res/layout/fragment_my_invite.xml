@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:titlebar="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:centerText="我的邀请奖励"
+        app:centerType="textView"
+        app:leftCustomView="@layout/lay_title_left_back"
+        app:leftType="customView"
+        app:rightText=""
+        app:rightType="textView"
+        app:showBottomLine="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="12dp"
+        android:background="@mipmap/ic_cashout_bg">
+
+        <TextView
+            android:id="@+id/tv_money_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="账户余额（元）"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:text="0.00"
+            app:layout_constraintLeft_toLeftOf="@id/tv_money_tag"
+            app:layout_constraintTop_toBottomOf="@id/tv_money_tag" />
+
+        <Button
+            android:id="@+id/bt_cashOut"
+            android:layout_width="65dp"
+            android:layout_height="27dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/bg_whiter_999"
+            android:textColor="@color/font_normal"
+            android:textSize="13sp"
+            android:text="提现"
+            app:layout_constraintBottom_toBottomOf="@id/tv_money"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.flyco.tablayout.SlidingScaleTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:tl_indicator_color="@color/colorAccent"
+        app:tl_indicator_corner_radius="3dp"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_width="7dp"
+        app:tl_openTextDmg="true"
+        app:tl_tab_gravity="Bottom"
+        app:tl_tab_marginBottom="8dp"
+        app:tl_tab_padding="15dp"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/font_normal"
+        app:tl_textSelectSize="20sp"
+        app:tl_textUnSelectColor="@color/font_normal"
+        app:tl_textUnSelectSize="12sp" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

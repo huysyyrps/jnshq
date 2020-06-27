@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:titlebar="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/f2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_home_bg"
+            android:scaleType="fitStart"/>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapseLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="30dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="70dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_moudle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="125dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="8dp"
+                            android:paddingTop="17dp"
+                            android:paddingLeft="17dp"
+                            android:paddingRight="17dp"
+                            android:background="@drawable/bg_white_top_radius10"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            />
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <include
+                            layout="@layout/lay_home_third" />
+                        <include
+                            layout="@layout/lay_home_car"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+                        android:id="@+id/titleBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        app:leftText=""
+                        app:leftType="textView"
+                        app:rightText=""
+                        app:rightType="textView"
+                        android:visibility="gone"
+                        app:centerType="textView"
+                        app:layout_collapseMode="pin"
+                        app:showBottomLine="false"
+                        app:statusBarColor="@color/home_bar_bg"
+                        app:titleBarColor="@color/home_bar_bg" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.flyco.tablayout.SlidingScaleTabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+                        app:tl_indicator_color="@color/colorAccent"
+                        app:tl_indicator_corner_radius="3dp"
+                        app:tl_indicator_gravity="BOTTOM"
+                        app:tl_indicator_height="2dp"
+                        app:tl_indicator_width="7dp"
+                        app:tl_openTextDmg="true"
+                        app:tl_tab_gravity="Bottom"
+                        app:tl_tab_marginBottom="8dp"
+                        app:tl_tab_padding="15dp"
+                        app:tl_textBold="SELECT"
+                        app:tl_textSelectColor="@color/font_normal"
+                        app:tl_textSelectSize="20sp"
+                        app:tl_textUnSelectColor="@color/font_normal"
+                        app:tl_textUnSelectSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_circle_create"
+                        android:layout_width="50dp"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/send_circle"
+                        android:gravity="center"
+                        android:text="发动态"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

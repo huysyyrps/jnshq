@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:textColor="@color/font_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="这是内容" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_images"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tv_content"
+        app:layout_constraintLeft_toLeftOf="@id/tv_content"
+        app:layout_constraintRight_toRightOf="@id/tv_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_border_color="#333333"
+            app:riv_border_width="2dip"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"
+            app:riv_tile_mode="clamp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="6dp"
+        android:src="@mipmap/action_location"
+        app:layout_constraintLeft_toLeftOf="@id/tv_content"
+        app:layout_constraintTop_toBottomOf="@id/cl_images" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_location"
+        app:layout_constraintLeft_toRightOf="@id/iv_location"
+        app:layout_constraintTop_toTopOf="@id/iv_location"
+        tools:text="济南" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/font_gray"
+        app:layout_constraintLeft_toLeftOf="@id/iv_location"
+        app:layout_constraintTop_toBottomOf="@id/iv_location"
+        tools:text="1小时前发布,3.2km.72播放" />
+
+    <ImageView
+        android:id="@+id/iv_thumb"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/action_thumb"
+        app:layout_constraintLeft_toLeftOf="@id/tv_info"
+        app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+    <TextView
+        android:id="@+id/tv_thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:textColor="@color/font_gray"
+        app:layout_constraintBottom_toBottomOf="@id/iv_thumb"
+        app:layout_constraintLeft_toRightOf="@id/iv_thumb"
+        app:layout_constraintTop_toTopOf="@id/iv_thumb"
+        tools:text="5" />
+
+    <ImageView
+        android:id="@+id/iv_comment"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/action_comment"
+        app:layout_constraintBottom_toBottomOf="@id/iv_thumb"
+        app:layout_constraintLeft_toRightOf="@id/tv_thumb"
+        app:layout_constraintTop_toTopOf="@id/iv_thumb" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:textColor="@color/font_gray"
+        app:layout_constraintBottom_toBottomOf="@id/iv_thumb"
+        app:layout_constraintLeft_toRightOf="@id/iv_comment"
+        app:layout_constraintTop_toTopOf="@id/iv_thumb"
+        tools:text="5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
